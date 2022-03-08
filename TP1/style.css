@@ -2,10 +2,7 @@
   width: auto;
   height: 100px;
   margin-left: 5vw;
-}
-.flemme {
-  width: 650px;
-  height: auto;
+  border-radius: 10%;
 }
 .menu {
   font-size: 30px;
@@ -22,37 +19,16 @@
   text-align: right;
 }
 .header {
-  display: flex;          
-  flex-direction: row;    
-  flex-wrap: nowrap;          
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
-
+  margin-top: 1vh;
+}
+h3 {
+  font-weight: bold;
 }
 
-
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
-h3{
-  font-weight:bold;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  transition-duration: 0.6s;
-  margin-left: 17%;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
 .hobby {
   display: flex;
   font-size: large;
@@ -68,4 +44,79 @@ body {
 
 .cv {
   margin-left: 5vw;
+}
+
+ul {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+ul.topnav {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(:active) {
+  background-color: #111;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+#current_page {
+  background: #d1964c;
+  color: #fff;
+}
+.card{
+  position: relative;
+  box-shadow: 0 15px 30px 1px grey;
+	background: rgba(255, 255, 255, 0.836);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: 20vh;
+	width: 25vw;
+  color: #344055;
+  font-size:calc(3.5px + 1vw);
+
+}
+.card h3{
+  font-size:calc(9px + 1.5vw);
+	display: inline-block;
+	position: relative;
+	color: #344055;
+	margin: 0;
+}
+
+#portfolio{
+  margin: auto;
+  margin-bottom: 50px;
+  width: 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card a{
+  position: absolute;
+  bottom: 0;
+  left: 37%;
 }
