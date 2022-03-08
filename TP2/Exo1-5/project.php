@@ -53,7 +53,7 @@ require_once("template/templateHeader.php")
         </div>
     </div>
 
-    <?php require_once("template/templateFoorter.php") ?>
+    <?php require_once("template/templateFooter.php") ?>
 </body>
 
 </html>
