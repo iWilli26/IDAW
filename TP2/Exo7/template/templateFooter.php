@@ -1,5 +1,5 @@
 <?php 
-function footer($currentPageId, $currentLang, $menuLang){
+function footer($currentPageId, $menuLang){
     echo'
     <div id="footer">
     <ul id="foot">
@@ -15,7 +15,7 @@ function footer($currentPageId, $currentLang, $menuLang){
         </li>
 ';
     foreach ($menuLang['lang'] as $lang){
-        echo '<li><a href="index.php?page=' . $currentPageId . '&lang='.$lang.'">'.$lang.'</a></li>';
+        echo '<li><a href="index.php?page=' . $currentPageId . '&lang='.$lang.'">'.strtoupper($lang).'</a></li>';
     }
         
         
