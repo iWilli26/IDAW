@@ -1,4 +1,5 @@
 <div class="cv">
+
     <div>
         <h3 style="margin-bottom: 0">Education</h3>
         <h4 style="margin: 0">
