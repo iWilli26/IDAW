@@ -1,6 +1,6 @@
 <div class="header">
     <div class="me">
-        <h3 id="name">English <br /></h3>
+        <h3 id="name">William NGUYEN <br /></h3>
     </div>
     <img src="./src/Misaka.jpg" alt="Misaka" class="misaka" />
     <div class="desc">

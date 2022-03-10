@@ -9,5 +9,5 @@ function render($currentPageId, $currentlang, $menuLang)
     }
     echo '</section>';
     require_once("./template/templateFooter.php");
-    footer($currentPageId, $menuLang);
+    footer($currentPageId, $currentlang,$menuLang);
 }
