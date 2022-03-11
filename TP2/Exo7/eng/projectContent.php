@@ -4,43 +4,42 @@
     </div>
     <img src="./src/Misaka.jpg" alt="Misaka" class="misaka" />
     <div class="desc">
-        <h3 id="name">Etudiant en 2e année d'école d'ingénieur <br /></h3>
-        Spécialisation en informatique <br />
-        IMT Nord Europe <br />
-        Stage d'une durée de 16 à 20 semaines à partir du 4 avril 2022 <br />
+        <h3 id="name">Student in engineering <br>
+            First year of Master degree specializing in IT <br>
+            IMT Nord Europe <br>
+            Looking for a 16 to 20-weeks internship
+
     </div>
 </div>
 <div id="portfolio">
     <div class="card">
         <h3>Inspiring Music Theory</h3>
-        <br />
-        Développement d'un site web ludique pour aider les enfants à apprendre
-        le solfège. <br />
+        Developed a ludic website to help children to learn music theory <br />
+
         Stack : HTML/CSS, PHP (Laravel), Javascript(Vue.js) <br />
         <a href="https://github.com/RomainGuarinoni/website_inspiring" target="_blank" rel="noopener noreferrer">GitHub
-            ici</a>
+            here</a>
     </div>
 
     <div class="card">
         <h3>Weather Report</h3>
         <br />
-        Application web rapport météo avec l'api openweathermap. <br />
+        Developed a Weather Report using the openweathermap api <br />
         Stack : HTML/CSS, Javascript <br />
-        <a href="https://github.com/iWilli26/Weather_Report" target="_blank" rel="noopener noreferrer">GitHub ici</a>
+        <a href="https://github.com/iWilli26/Weather_Report" target="_blank" rel="noopener noreferrer">GitHub here</a>
     </div>
     <div class="card">
         <h3>Waving Flag</h3>
         <br />
-        Application Web d'affichage de drapeau de pays avec les infos associés
-        avec l'api restcountries. <br />
+        Country search application using the restcountries api <br>
         Stack : HTML/CSS, Javascript(React.js) <br />
-        <a href="https://github.com/iWilli26/Waving_Flag" target="_blank" rel="noopener noreferrer">GitHub ici</a>
+        <a href="https://github.com/iWilli26/Waving_Flag" target="_blank" rel="noopener noreferrer">GitHub here</a>
     </div>
     <div class="card">
         <h3>Anime List</h3>
         <br />
-        Application Web d'affichage d'anime à l'aide de l'api anilist. <br />
+        Developed an application to display anime informations with the anilist api <br>
         Stack : React.native <br />
-        <a href="https://github.com/iWilli26/AnimeList" target="_blank" rel="noopener noreferrer">GitHub ici</a>
+        <a href="https://github.com/iWilli26/AnimeList" target="_blank" rel="noopener noreferrer">GitHub here</a>
     </div>
 </div>

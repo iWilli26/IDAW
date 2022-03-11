@@ -30,8 +30,8 @@
     <div class="cardJap">
         <h3>La culture japonaise</h3>
         <br />
-        Waifu is love, Waifus is life<br />
-        <div class="infoJap">
+        Fan de Manga et Anime<br />
+        <div class=" infoJap">
             <h2>Anime Préféré</h2>
             <ul>
                 <a href="https://anilist.co/anime/21827/Violet-Evergarden/" target="_blank" rel="noopener noreferrer">
@@ -54,16 +54,12 @@
     <div class="card">
         <h3>Piano</h3>
         <br />
-        Pratique régulière du piano depuis 14 ans<br />
+        Pratique régulière du piano depuis 15 ans<br />
     </div>
     <div class="card">
         <h3>Badminton</h3>
         <br />
-        Joue au Badminton depuis 8 ans<br />
+        Joue au Badminton depuis 10 ans<br />
     </div>
-    <div class="card">
-        <h3>Natation</h3>
-        <br />
-        A pratiqué pendant 5 ans la Natation<br />
-    </div>
+
 </div>

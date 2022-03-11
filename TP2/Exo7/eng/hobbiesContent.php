@@ -1,11 +1,11 @@
 <div class="hobby">
     <div class="cardJeu">
-        <h3>English "Taverne de l'Imaginaire"</h3>
+        <h3>President of the Board Game association "Taverne de l'Imaginaire"</h3>
         <br />
-        Organise des soirées jeu de société régulièrement ouvert à tous les étudiants (et prof??)<br />
+        Organized frequent Board Game Night open to every students of teh school<br />
 
         <div class="infoJeu">
-            <h2>Meilleur jeu</h2>
+            <h2>Our best games</h2>
             <ul>
                 <a href="https://www.amazon.fr/Alderac-Entertainment-Group-Lettre-damour/dp/B076ZVPKY1" target="_blank"
                     rel="noopener noreferrer">
@@ -28,11 +28,11 @@
         </div>
     </div>
     <div class="cardJap">
-        <h3>La culture japonaise</h3>
+        <h3>Japanese culture</h3>
         <br />
-        Waifu is love, Waifus is life<br />
+        Fan of manga and anime<br />
         <div class="infoJap">
-            <h2>Anime Préféré</h2>
+            <h2>Best anime</h2>
             <ul>
                 <a href="https://anilist.co/anime/21827/Violet-Evergarden/" target="_blank" rel="noopener noreferrer">
                     <li><strong>Violet Evergarden</strong></li>
@@ -54,16 +54,12 @@
     <div class="card">
         <h3>Piano</h3>
         <br />
-        Pratique régulière du piano depuis 14 ans<br />
+        Played piano for 15 years<br />
     </div>
     <div class="card">
         <h3>Badminton</h3>
         <br />
-        Joue au Badminton depuis 8 ans<br />
+        Played Badminton for 10 years<br />
     </div>
-    <div class="card">
-        <h3>Natation</h3>
-        <br />
-        A pratiqué pendant 5 ans la Natation<br />
-    </div>
+
 </div>
