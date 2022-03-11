@@ -1,0 +1,9 @@
+version: "3.9" # optional since v1.27.0
+services:
+  app:
+    container_name: "TP_1"
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
