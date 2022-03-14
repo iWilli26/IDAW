@@ -38,15 +38,15 @@ if (isset($_GET['css'])) {
     }
 }
 if (isset($_SESSION['login']))
-    echo 'session login : ' . $_SESSION['login'];
+    echo 'session login : ' . $_SESSION['login'].' <br>';
 
 ?>
+<a href="inscription.php">Sign in</a>
 <form method="post" action="index.php">
     <input type="submit" name="disconnect" id="disconnect" value="Kill session" /><br />
 </form>
 <?php
 if (array_key_exists('disconnect', $_POST)) {
-    print_r($_POST);
     setcookie("css", "", time() - 3600);
     session_destroy();
 }
