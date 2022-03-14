@@ -26,17 +26,18 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     $tryPwd = $_POST['password'];
     $sql = 'SELECT login,password FROM person WHERE login="' . $tryLogin . '" AND password="' . $tryPwd . '"';
     $result = mysqli_query($mysqli, $sql);
-    if ($result->num_rows>0) {
-        // $sql = 'SELECT pseudo FROM person WHERE login="' . $tryLogin . '"';
-        // $result = mysqli_query($mysqli, $sql);
+    if ($result->num_rows > 0) {
+        $sql = 'SELECT pseudo FROM person WHERE login="' . $tryLogin . '"';
+        $result = mysqli_query($mysqli, $sql);
+        $row = mysqli_fetch_assoc($result);
         $successfullyLogged = true;
-        $login = $tryLogin;
+        $login = $row['pseudo'];
         $_SESSION['login'] = $login;
-        // si login existe et password correspond
-        // if (array_key_exists($tryLogin, $users) && $users[$tryLogin] == $tryPwd) {
-        //     $successfullyLogged = true;
-        //     $login = $tryLogin;
-        //     $_SESSION['login'] = $login;
+    // si login existe et password correspond
+    // if (array_key_exists($tryLogin, $users) && $users[$tryLogin] == $tryPwd) {
+    //     $successfullyLogged = true;
+    //     $login = $tryLogin;
+    //     $_SESSION['login'] = $login;
 
     } else
         $errorText = "Erreur de login/password";
