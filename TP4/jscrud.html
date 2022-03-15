@@ -10,16 +10,9 @@
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
     <title>tabletest</title>
-    <style>
-      body {
-        margin: 0;
-      }
-      .table {
-        margin: 100px;
-        margin-top: 0;
-      }
-    </style>
   </head>
   <body>
     <table class="table">
@@ -77,65 +70,12 @@
       </div>
       <div class="form-group row">
         <span class="col-sm-2"></span>
-        <div class="col-sm-2">
+        <div id="subBtn">
           <button type="submit" class="btn btn-primary form-control">
             Submit
           </button>
         </div>
       </div>
     </form>
-    <script>
-      function onFormSubmit() {
-        // prevent the form to be sent to the server
-        event.preventDefault();
-        let nom = $("#inputNom").val();
-        let prenom = $("#inputPrenom").val();
-        let date = $("#inputDate").val();
-        let like = document.getElementById("inputLike").checked;
-        let rem = $("#inputRem").val();
-        const element = document.getElementsByClassName("error")[0];
-        // update.addEventListener("click", () => {});
-        function deleteRow(btn) {
-          console.log("test");
-          var row = btn.parentNode.parentNode;
-          row.parentNode.removeChild(row);
-        }
-
-        if (nom === "") {
-          element.innerHTML = "Y'a pas de nom";
-        } else {
-          $("#studentsTableBody").append(
-            `<tr id='${nom}${prenom}'>
-                <td>${nom}</td>
-                <td>${prenom}</td>
-                <td>${date} </td>
-                <td>${like} </td>
-                <td>${rem} </td>
-                <td>
-                    <button class="updBtn">Update</button>
-                    <button class="delBtn" onclick="deleteRow(this)">Delete</button>
-                </td>
-            </tr>`
-          );
-          element.innerHTML = "";
-        }
-      }
-      function deleteRow(btn) {
-        var row = btn.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-      }
-    </script>
-    <style>
-      table,
-      td {
-        border: 1px solid #333;
-      }
-
-      thead,
-      tfoot {
-        background-color: #333;
-        color: #fff;
-      }
-    </style>
   </body>
 </html>
