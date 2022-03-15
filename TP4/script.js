@@ -17,15 +17,32 @@ function toPerson(nom, prenom, date, like, rem) {
   return guy;
 }
 var list = new Array();
+
 function getForm() {
+  const date = datetoString($("#inputDate").val());
   return toPerson(
     $("#inputNom").val(),
     $("#inputPrenom").val(),
-    $("#inputDate").val(),
+    date,
     document.getElementById("inputLike").checked,
     $("#inputRem").val()
   );
 }
+let options = {
+  timeZone: "GMT",
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+function datetoString(date) {
+  return date.toLocaleString("us-US");
+}
+
+var d = new Date(Date.UTC(2000, 6, 20));
+
+list.push(toPerson("Misaka", "Mikoto", d, true, "Railgun <3"));
+displayTab();
 
 function onFormSubmit() {
   event.preventDefault();
@@ -80,6 +97,13 @@ function updateRow(i) {
       document.getElementById(`row${j}`).style.background = "none";
     }
   }
+  console.log(document.getElementById("inputDate").value);
+  console.log(list[i].date);
+  document.getElementById("inputNom").value = list[i].nom;
+  document.getElementById("inputPrenom").value = list[i].prenom;
+  document.getElementById("inputDate").value = list[i].date;
+  document.getElementById("inputRem").value = list[i].rem;
+
   edit = true;
   global = i;
 }
