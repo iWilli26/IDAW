@@ -28,8 +28,7 @@
       </thead>
       <tbody id="studentsTableBody"></tbody>
     </table>
-    <div class="error"></div>
-    <form id="addStudentForm" action="" onsubmit="onFormSubmit();">
+    <form id="addStudentForm" action="" onsubmit="onFormSubmit(0);">
       <div class="form-group row">
         <label for="inputNom" class="col-sm-2 col-form-label">Nom*</label>
         <div class="col-sm-3">
@@ -70,8 +69,12 @@
       </div>
       <div class="form-group row">
         <span class="col-sm-2"></span>
-        <div id="subBtn">
-          <button type="submit" class="btn btn-primary form-control">
+        <div id="divBtn">
+          <button
+            id="subBtn"
+            type="submit"
+            class="btn btn-primary form-control"
+          >
             Submit
           </button>
         </div>

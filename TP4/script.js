@@ -5,7 +5,8 @@ const Person = {
   Boolean,
   String,
 };
-
+var global = 0;
+var edit = false;
 function toPerson(nom, prenom, date, like, rem) {
   let guy = Object.create(Person);
   guy.nom = nom;
@@ -17,17 +18,25 @@ function toPerson(nom, prenom, date, like, rem) {
 }
 var list = new Array();
 function getForm() {
-  event.preventDefault();
-  let nom = $("#inputNom").val();
-  let prenom = $("#inputPrenom").val();
-  let date = $("#inputDate").val();
-  let like = document.getElementById("inputLike").checked;
-  let rem = $("#inputRem").val();
-  return toPerson(nom, prenom, date, like, rem);
+  return toPerson(
+    $("#inputNom").val(),
+    $("#inputPrenom").val(),
+    $("#inputDate").val(),
+    document.getElementById("inputLike").checked,
+    $("#inputRem").val()
+  );
 }
 
 function onFormSubmit() {
-  addRow(getForm());
+  event.preventDefault();
+  if (edit === false) {
+    addRow(getForm());
+  } else {
+    const person = getForm();
+    list[global] = person;
+    displayTab();
+    edit = false;
+  }
 }
 
 function displayTab() {
@@ -35,11 +44,11 @@ function displayTab() {
   for (let i = 0; i < list.length; i++) {
     $("#studentsTableBody").append(
       `<tr id="row${i}">
-                    <td>${list[i].nom}</td>
-                    <td>${list[i].prenom}</td>
-                    <td>${list[i].date} </td>
-                    <td>${list[i].like} </td>
-                    <td>${list[i].rem} </td>
+                    <td id="nom${i}">${list[i].nom}</td>
+                    <td id="prenom${i}">${list[i].prenom}</td>
+                    <td id="date${i}">${list[i].date} </td>
+                    <td id="like${i}">${list[i].like} </td>
+                    <td id="rem${i}">${list[i].rem} </td>
                     <td>
                         <button class="updBtn" onclick="updateRow(${i})">Update</button>
                         <button class="delBtn" onclick="deleteRow(this)">Delete</button>
@@ -47,32 +56,16 @@ function displayTab() {
                 </tr>`
     );
   }
-  //   list.map((person) => {
-  //     $("#studentsTableBody").append(
-  //       `<tr id='${person.nom}${person.prenom}'>
-  //                   <td>${person.nom}</td>
-  //                   <td>${person.prenom}</td>
-  //                   <td>${person.date} </td>
-  //                   <td>${person.like} </td>
-  //                   <td>${person.rem} </td>
-  //                   <td>
-  //                       <button class="updBtn" onclick="updateRow(this)">Update</button>
-  //                       <button class="delBtn" onclick="deleteRow(this)">Delete</button>
-  //                   </td>
-  //               </tr>`
-  //     );
-  //   });
 }
 function addRow(person) {
-  const element = document.getElementsByClassName("error")[0];
   if (person.nom === "") {
-    element.innerHTML = "Y'a pas de nom";
+    alert("Nom invalide");
   } else {
     list.push(person);
-    element.innerHTML = "";
   }
   displayTab();
 }
+
 function deleteRow(btn) {
   var row = btn.parentNode.parentNode;
   row.parentNode.removeChild(row);
@@ -80,11 +73,13 @@ function deleteRow(btn) {
 
 function updateRow(i) {
   const element = document.getElementById(`row${i}`);
-  element.style.background = "red";
-  const btn = document.getElementById("subBtn");
-  btn.addEventListener("click", () => {
-    const person = getForm();
-    list[i] = person;
-    displayTab();
-  });
+  for (let j = 0; j < list.length; j++) {
+    if (i === j) {
+      element.style.background = "red";
+    } else {
+      document.getElementById(`row${j}`).style.background = "none";
+    }
+  }
+  edit = true;
+  global = i;
 }
