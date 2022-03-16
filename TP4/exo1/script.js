@@ -7,6 +7,7 @@ const Person = {
 };
 var global = 0;
 var edit = false;
+
 function toPerson(nom, prenom, date, like, rem) {
   let guy = Object.create(Person);
   guy.nom = nom;
@@ -18,30 +19,36 @@ function toPerson(nom, prenom, date, like, rem) {
 }
 var list = new Array();
 
+function formattedDate(d = new Date()) {
+  let month = String(d.getMonth() + 1);
+  let day = String(d.getDate());
+  const year = String(d.getFullYear());
+
+  if (month.length < 2) month = "0" + month;
+  if (day.length < 2) day = "0" + day;
+
+  return `${year}-${month}-${day}`;
+}
+
 function getForm() {
-  const date = datetoString($("#inputDate").val());
   return toPerson(
     $("#inputNom").val(),
     $("#inputPrenom").val(),
-    date,
+    $("#inputDate").val(),
     document.getElementById("inputLike").checked,
     $("#inputRem").val()
   );
 }
-let options = {
-  timeZone: "GMT",
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-};
-function datetoString(date) {
-  return date.toLocaleString("us-US");
-}
 
-var d = new Date(Date.UTC(2000, 6, 20));
-
-list.push(toPerson("Misaka", "Mikoto", d, true, "Railgun <3"));
+list.push(
+  toPerson(
+    "Misaka",
+    "Mikoto",
+    formattedDate(new Date(2018, 8, 22)),
+    true,
+    "Railgun <3"
+  )
+);
 displayTab();
 
 function onFormSubmit() {
@@ -68,12 +75,13 @@ function displayTab() {
                     <td id="rem${i}">${list[i].rem} </td>
                     <td>
                         <button class="updBtn" onclick="updateRow(${i})">Update</button>
-                        <button class="delBtn" onclick="deleteRow(this)">Delete</button>
+                        <button class="delBtn" onclick="deleteRow(this, ${i})">Delete</button>
                     </td>
                 </tr>`
     );
   }
 }
+
 function addRow(person) {
   if (person.nom === "") {
     alert("Nom invalide");
@@ -83,9 +91,12 @@ function addRow(person) {
   displayTab();
 }
 
-function deleteRow(btn) {
+function deleteRow(btn, index) {
   var row = btn.parentNode.parentNode;
   row.parentNode.removeChild(row);
+  if (index > -1) {
+    list.splice(index, 1);
+  }
 }
 
 function updateRow(i) {
@@ -97,11 +108,9 @@ function updateRow(i) {
       document.getElementById(`row${j}`).style.background = "none";
     }
   }
-  console.log(document.getElementById("inputDate").value);
-  console.log(list[i].date);
+
   document.getElementById("inputNom").value = list[i].nom;
   document.getElementById("inputPrenom").value = list[i].prenom;
-  document.getElementById("inputDate").value = list[i].date;
   document.getElementById("inputRem").value = list[i].rem;
 
   edit = true;
