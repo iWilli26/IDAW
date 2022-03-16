@@ -12,12 +12,12 @@ if ($conn->connect_error) {
 $nom  = $_POST['nom'];
 $prenom  = $_POST['prenom'];
 $date  = $_POST['date'];
-if ($_POST['like'] == true) {
+if ($_POST['like'] == 'true') {
     $like = 1;
 } else {
     $like = 0;
 }
-$rem  = $_POST['rem'];
+$rem = $_POST['rem'];
 
 if (!$nom || !$prenom) {
     $result = 2;
@@ -30,5 +30,4 @@ if (!$nom || !$prenom) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-echo $result;
 $conn->close();
