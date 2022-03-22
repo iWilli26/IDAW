@@ -109,8 +109,9 @@ function updateRow(id, index) {
 function postData(person) {
   $.ajax({
     method: "POST",
-    url: "../request/addUser.php",
+    url: "../request.php",
     data: {
+      type: "create",
       id: person.id,
       nom: person.nom,
       prenom: person.prenom,
@@ -126,8 +127,9 @@ function postData(person) {
 function updateData(person) {
   $.ajax({
     method: "POST",
-    url: "../request/updateUser.php",
+    url: `../request.php?id=${selectedRowId}`,
     data: {
+      type: "update",
       id: selectedRowId,
       nom: person.nom,
       prenom: person.prenom,
@@ -143,8 +145,8 @@ function updateData(person) {
 
 function getData() {
   $.ajax({
-    method: "POST",
-    url: "../request/getAllUser.php",
+    method: "GET",
+    url: "../request.php",
   })
     .done((response) => {
       list = JSON.parse(response);
@@ -157,11 +159,8 @@ function getData() {
 
 function deleteUser(id) {
   $.ajax({
-    method: "POST",
-    url: "../request/deleteUser.php",
-    data: {
-      id: id,
-    },
+    method: "DELETE",
+    url: `../request.php?id=${id}`,
   })
     .done((response) => {
       getData();
